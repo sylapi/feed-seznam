@@ -5,15 +5,8 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0.0",
-        "sylapi/feed": "@dev",
-        "fzaninotto/faker": "dev-master"
+        "sylapi/feeds": "^0.1.0"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../feed/"
-        }
-    ],
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "phpstan/phpstan": "^0.12.77"        
@@ -32,5 +25,5 @@
         "coverage": "XDEBUG_MODE=coverage  vendor/bin/phpunit --verbose --coverage-text",
         "coverage-html": "XDEBUG_MODE=coverage  vendor/bin/phpunit --coverage-html ./coverage/"
     },
-    "prefer-stable": false        
+    "prefer-stable": true        
 }
