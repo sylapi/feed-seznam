@@ -81,9 +81,7 @@ class ProductTest extends PHPUnitTestCase
     {
         $content = $this->serializer->serialize($this->product, 'xml');
         $filePath = __DIR__.'/Mock/product.xml';
-
-        file_put_contents($filePath, $content);
-
+        
         $this->assertXmlStringEqualsXmlFile($filePath, $content);
     }
 
