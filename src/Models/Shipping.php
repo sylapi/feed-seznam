@@ -10,24 +10,45 @@ use JMS\Serializer\Annotation as Serializer;
 class Shipping
 {
     /**
+     * @Serializer\Type("string")
+     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\SerializedName("DELIVERY_ID")
+     */
+    private $service;
+
+    /**
      * @Serializer\Type("double")
-     * @Serializer\SerializedName("delivery_price")
+     * @Serializer\SerializedName("DELIVERY_PRICE")
      */
     private $price;
 
     /**
      * @Serializer\Type("double")
-     * @Serializer\SerializedName("delivery_price_cod")
+     * @Serializer\SerializedName("DELIVERY_PRICE_COD")
      */
-    private $priceCod;    
+    private $priceCod;
 
     /**
-     * @Serializer\Type("double")
-     * @Serializer\SerializedName("delivery_id")
-     */
-    private $courier;
+     * Get the value of service
+     */ 
+    public function getService()
+    {
+        return $this->service;
+    }
 
-        /**
+    /**
+     * Set the value of service
+     *
+     * @return  self
+     */ 
+    public function setService($service)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
      * Get the value of price
      */ 
     public function getPrice()
@@ -67,25 +88,7 @@ class Shipping
         return $this;
     }
 
-    /**
-     * Get the value of courier
-     */ 
-    public function getCourier()
-    {
-        return $this->courier;
-    }
 
-    /**
-     * Set the value of courier
-     *
-     * @return  self
-     */ 
-    public function setCourier($courier)
-    {
-        $this->courier = $courier;
-
-        return $this;
-    }
 
     public function make($shipping): self
     {

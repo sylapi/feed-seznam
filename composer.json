@@ -5,7 +5,8 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0.0",
-        "sylapi/feed": "@dev"
+        "sylapi/feed": "@dev",
+        "fzaninotto/faker": "dev-master"
     },
     "repositories": [
         {

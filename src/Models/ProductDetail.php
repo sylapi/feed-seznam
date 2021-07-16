@@ -13,14 +13,14 @@ class ProductDetail
     /**
      * @Serializer\Type("string")
      * @Serializer\XmlElement(cdata=false)
-     * @Serializer\SerializedName("param_name")
+     * @Serializer\SerializedName("PARAM_NAME")
      */
     private $attributeName;
     
     /**
      * @Serializer\Type("string")
      * @Serializer\XmlElement(cdata=false)
-     * @Serializer\SerializedName("val")
+     * @Serializer\SerializedName("VAL")
      */
     private $attributeValue;
 

@@ -50,8 +50,15 @@ class Product implements ProductSerializer
     /**
      * @Serializer\Type("double")
      * @Serializer\SerializedName("PRICE_VAT")
+     * @Serializer\Exclude(if="object.getSalePrice() !== null")
      */
     private $price;
+
+    /**
+     * @Serializer\Type("double")
+     * @Serializer\SerializedName("PRICE_VAT")
+     */
+    private $salePrice;
 
     /**
      * @Serializer\Type("string")
@@ -121,13 +128,13 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\XmlElement(cdata=false)
-     * @Serializer\XmlList(inline = true, entry = "param")
+     * @Serializer\XmlList(inline = true, entry = "PARAM")
      */
     private $productDetails;
 
     /**
      * @Serializer\XmlElement(cdata=false)
-     * @Serializer\XmlList(inline = true, entry = "extra_message")
+     * @Serializer\XmlList(inline = true, entry = "EXTRA_MESSAGE")
      */
     private $productHighlights;    
 
@@ -263,15 +270,31 @@ class Product implements ProductSerializer
     }
 
     /**
+     * Get the value of salePrice
+     */ 
+    public function getSalePrice()
+    {
+        return $this->salePrice;
+    }
+
+    /**
+     * Set the value of salePrice
+     *
+     * @return  self
+     */ 
+    public function setSalePrice($salePrice)
+    {
+        $this->salePrice = $salePrice;
+
+        return $this;
+    }
+
+    /**
      * Get the value of productCategory
      */ 
     public function getProductCategory()
     {
-        if(isset($this->productCategory[Feed::NAME])) {
-            return $this->productCategory[Feed::NAME];
-        }
-        
-        return null;
+        return $this->productCategory;
     }
 
     /**
@@ -431,7 +454,7 @@ class Product implements ProductSerializer
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("custom_label_0")
      * @Serializer\XmlElement(cdata=false)
-     * @return string
+     * @return null|string
      */
     public function getCustomLabel0()
     {
@@ -446,7 +469,7 @@ class Product implements ProductSerializer
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("custom_label_1")
      * @Serializer\XmlElement(cdata=false)
-     * @return string
+     * @return null|string
      */
     public function getCustomLabel1()
     {
@@ -461,7 +484,7 @@ class Product implements ProductSerializer
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("custom_label_2")
      * @Serializer\XmlElement(cdata=false)
-     * @return string
+     * @return null|string
      */
     public function getCustomLabel2()
     {
@@ -476,7 +499,7 @@ class Product implements ProductSerializer
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("custom_label_3")
      * @Serializer\XmlElement(cdata=false)
-     * @return string
+     * @return null|string
      */
     public function getCustomLabel3()
     {
@@ -491,7 +514,7 @@ class Product implements ProductSerializer
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("custom_label_4")
      * @Serializer\XmlElement(cdata=false)
-     * @return string
+     * @return null|string
      */
     public function getCustomLabel4()
     {
@@ -602,12 +625,25 @@ class Product implements ProductSerializer
                         break;                      
                     }
                 }
-                if(is_array($elem) && $itemVar === 'productDetails') {
-                    $elems = [];
-                    foreach($elem as $pd){
-                        $elems[] = (new ProductDetail)->make($pd);
+
+                if($itemVar === 'productCategory') {
+                    if(is_array($elem) && isset($elem[Feed::NAME])) {
+                        $elem = $elem[Feed::NAME];
+                    } else {
+                        $elem = null;
                     }
-                    $elem = $elems;
+                }
+                
+                if($itemVar === 'productDetails') {
+                    if(isset($elem[Feed::NAME]) && is_array($elem[Feed::NAME])) {
+                        $elems = [];
+                        foreach($elem[Feed::NAME] as $pd){
+                            $elems[] = (new ProductDetail)->make($pd);
+                        }
+                        $elem = $elems;
+                    } else {
+                        $elem = null;
+                    }
                 }
 
                 $item->{$setterName}($elem);  
