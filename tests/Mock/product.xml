@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SHOPITEM>
   <PRODUCTNAME>Test title</PRODUCTNAME>
-  <custom_label_0>label 1</custom_label_0>
-  <custom_label_1>label 2</custom_label_1>
-  <custom_label_2>label 3</custom_label_2>
-  <custom_label_3>label 4</custom_label_3>
-  <custom_label_4>label 5</custom_label_4>
+  <CUSTOM_LABEL_0>label 1</CUSTOM_LABEL_0>
+  <CUSTOM_LABEL_1>label 2</CUSTOM_LABEL_1>
+  <CUSTOM_LABEL_2>label 3</CUSTOM_LABEL_2>
+  <CUSTOM_LABEL_3>label 4</CUSTOM_LABEL_3>
+  <CUSTOM_LABEL_4>label 5</CUSTOM_LABEL_4>
   <ITEM_ID>1234567890</ITEM_ID>
   <PRODUCT>Test title</PRODUCT>
   <DESCRIPTION>Test Description</DESCRIPTION>
