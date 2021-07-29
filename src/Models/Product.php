@@ -452,7 +452,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_0")
+     * @Serializer\SerializedName("CUSTOM_LABEL_0")
      * @Serializer\XmlElement(cdata=false)
      * @return null|string
      */
@@ -467,7 +467,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_1")
+     * @Serializer\SerializedName("CUSTOM_LABEL_1")
      * @Serializer\XmlElement(cdata=false)
      * @return null|string
      */
@@ -482,7 +482,7 @@ class Product implements ProductSerializer
     
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_2")
+     * @Serializer\SerializedName("CUSTOM_LABEL_2")
      * @Serializer\XmlElement(cdata=false)
      * @return null|string
      */
@@ -497,7 +497,7 @@ class Product implements ProductSerializer
     
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_3")
+     * @Serializer\SerializedName("CUSTOM_LABEL_3")
      * @Serializer\XmlElement(cdata=false)
      * @return null|string
      */
@@ -512,7 +512,7 @@ class Product implements ProductSerializer
     
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_4")
+     * @Serializer\SerializedName("CUSTOM_LABEL_4")
      * @Serializer\XmlElement(cdata=false)
      * @return null|string
      */
