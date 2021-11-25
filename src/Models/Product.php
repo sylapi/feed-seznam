@@ -14,41 +14,42 @@ class Product implements ProductSerializer
 {
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("ITEM_ID")
      */
     private $id;
     
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRODUCT")
      */
     private $title;
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("DESCRIPTION")
      */
     private $description;
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("URL")
      */
     private $link;
 
     /**
      * @Serializer\Type("string") 
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("IMGURL")
      */
     private $imageLink;
 
     /**
      * @Serializer\Type("double")
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRICE_VAT")
      * @Serializer\Exclude(if="object.getSalePrice() !== null")
      */
@@ -56,41 +57,42 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\Type("double")
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRICE_VAT")
      */
     private $salePrice;
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("CATEGORYTEXT")
      */
     private $productCategory;  
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("MANUFACTURER")
      */
     private $manufacturer;
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("BRAND")
      */
     private $brand;
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("EAN")
      */
     private $gtin;  
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRODUCTNO")
      */
     private $mpn;
@@ -104,7 +106,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("ITEMGROUP_ID")
      */
     private $itemGroupId;
@@ -127,13 +129,13 @@ class Product implements ProductSerializer
     private $maxHandlingTime;  
 
     /**
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\XmlList(inline = true, entry = "PARAM")
      */
     private $productDetails;
 
     /**
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\XmlList(inline = true, entry = "EXTRA_MESSAGE")
      */
     private $productHighlights;    
