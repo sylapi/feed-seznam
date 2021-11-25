@@ -182,7 +182,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRODUCTNAME")
      * @return string
      */
@@ -455,7 +455,7 @@ class Product implements ProductSerializer
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("CUSTOM_LABEL_0")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @return null|string
      */
     public function getCustomLabel0()
@@ -470,7 +470,7 @@ class Product implements ProductSerializer
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("CUSTOM_LABEL_1")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @return null|string
      */
     public function getCustomLabel1()
@@ -485,7 +485,7 @@ class Product implements ProductSerializer
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("CUSTOM_LABEL_2")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @return null|string
      */
     public function getCustomLabel2()
@@ -500,7 +500,7 @@ class Product implements ProductSerializer
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("CUSTOM_LABEL_3")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @return null|string
      */
     public function getCustomLabel3()
@@ -515,7 +515,7 @@ class Product implements ProductSerializer
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("CUSTOM_LABEL_4")
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @return null|string
      */
     public function getCustomLabel4()
