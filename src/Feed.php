@@ -21,7 +21,7 @@ class Feed extends FeedAbstract
     public function initXML(): \DOMElement
     {
         $doc = $this->getDocument();
-        $node = $doc->createElement("SHOP");
+        $node = $doc->createElementNS("http://www.zbozi.cz/ns/offer/1.0", "SHOP");
         $doc->appendChild($node);
         $this->setMainXmlElement( $node);
         return $node;
