@@ -481,51 +481,6 @@ class Product implements ProductSerializer
         }
         return $lables[1];
     }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("CUSTOM_LABEL_2")
-     * @Serializer\XmlElement(cdata=true)
-     * @return null|string
-     */
-    public function getCustomLabel2()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[2])) {
-            return null;
-        }
-        return $lables[2];
-    }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("CUSTOM_LABEL_3")
-     * @Serializer\XmlElement(cdata=true)
-     * @return null|string
-     */
-    public function getCustomLabel3()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[3])) {
-            return null;
-        }
-        return $lables[3];
-    }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("CUSTOM_LABEL_4")
-     * @Serializer\XmlElement(cdata=true)
-     * @return null|string
-     */
-    public function getCustomLabel4()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[4])) {
-            return null;
-        }
-        return $lables[4];
-    } 
 
     /**
      * Get the value of shipping
